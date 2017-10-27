@@ -1,0 +1,25 @@
+/*font-family: 'Cabin Sketch', cursive;
+font-family: 'Rock Salt', cursive;*/
+
+body{
+	background-color: #5fbcd7;
+}
+
+h1{
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 60px;
+
+}
+h4{
+	font-family: 'Rock Salt', cursive;
+}
+
+.profile{
+	width: 70px;
+	height: 70px;
+}
+.hero{
+	margin-left: 100px;
+	margin-bottom: 50px;
+	padding-right: 50px;
+}
