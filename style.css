@@ -7,11 +7,14 @@ body{
 
 h1{
 	font-family: 'Cabin Sketch', cursive;
-	font-size: 60px;
+	font-size: 80px;
 
 }
 h4{
 	font-family: 'Rock Salt', cursive;
+}
+.col-6 h3{
+	margin-top: 15px;
 }
 
 .profile{
@@ -22,4 +25,11 @@ h4{
 	margin-left: 100px;
 	margin-bottom: 50px;
 	padding-right: 50px;
+}
+.bio{
+	margin:25px auto;
+}
+.image img{
+	display: block;
+	margin:auto;
 }

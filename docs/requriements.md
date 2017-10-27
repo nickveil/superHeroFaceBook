@@ -18,7 +18,21 @@
 ### Page Requirements
 1. List all super heroes in database
 2. Each super hero should have:
-	- Name
-	-Thumbnail image
-	-About me section
+	* Name
+	* Thumbnail image
+	* About me section
+
+### Stretch Goals
+
+1. Profile Page with:
+	* Name
+	* Large Pic
+	* About me
+	* Bio
+
+2. Additional info
+	* Allies
+	* Enemies
+	* Abilities
+	* Links to Allies and Enemies
 
