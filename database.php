@@ -1,15 +1,28 @@
-<!-- CREATE USER herouser WITH PASSWORD 'heroherohero'; -->
-<!-- CREATE DATABASE hero_dev OWNER herouser; -->
-
 <?php
 
-	function getDb(){
+  function getDb() {
 
-		$db = pg_connect("host=localhost port=5432 dbname=hero_dev user=herouser password=heroherohero");
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/.env')) {
+      require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+      $dotenv = new Dotenv\Dotenv($_SERVER['DOCUMENT_ROOT']);
+      $dotenv->load();
+    }
 
-		return $db;
-	}
- 
- // var_dump(getdb());
+    $url = parse_url(getenv("DATABASE_URL"));
+
+    $db_port = $url['port'];
+    $db_host = $url['host'];
+    $db_user = $url['user'];
+    $db_pass = $url['pass'];
+    $db_name = substr($url['path'], 1);
+
+    $db = pg_connect(
+      "host=" . $db_host .
+      " port=" . $db_port .
+      " dbname=" . $db_name .
+      " user=" . $db_user .
+      " password=" . $db_pass);
+    return $db;
+  }
 
 ?>
