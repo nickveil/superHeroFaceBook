@@ -8,18 +8,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Rock+Salt" rel="stylesheet">
 	<title>Super Hero FaceBook</title>
 </head>
-<body class="container mt-5">
-	<h1 class="text-center">Welcome to The Super FaceBook</h1>	
+<body class="container mt-3">
 
-
-	<div class='hero'>
 
 	<?php
-	include ('../database.php');
+		include ('../database.php');
 
 		if (isset($_GET['hero_id'])){
 			$name = $_GET['hero_id'];
 		}
+
 
 		function getHeroes($name){
 			$request = pg_query (getDb(), "
@@ -40,7 +38,10 @@
 			$hero_bio = $hero['bio'];
 			array_push($hero_ability,$hero['ability']);
 		}
-		?>
+	?>
+
+	<h1 class="text-center">Welcome to The Super FaceBook</h1>	
+	<div class='hero <?=$name?>'>
 		<div class="image">
 			<img class="bio mt-2" src="<?=$hero['img']?>">
 		</div>
@@ -53,20 +54,12 @@
 			<?php
 				foreach($hero_ability as $ability){
 			?>
-					<li><?=$ability?></li>
+				<li><?=$ability?></li>
 			<?php
 				}
 				?>
 			</ul>
-
-			  
-
-		
 		<a class='mb-5' href='../index.php'>Back</a>
-
 	</div>
-
-	
-
 </body>
 </html>
